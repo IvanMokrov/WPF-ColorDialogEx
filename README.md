@@ -7,7 +7,7 @@ Each small triangle means a **harmonic color** for the current choosen color - j
 
 ![smalllight](https://user-images.githubusercontent.com/22683821/48414705-7de57f80-e75c-11e8-9397-4c1963f00c41.png) ![smalldark](https://user-images.githubusercontent.com/22683821/48414712-81790680-e75c-11e8-8c99-0329e99952f7.png)
 
-A cube on the left side shows a current selected color on the front, and a prevous selected color on the sides. It may helps you to preview a harmononics of colors.
+A cube on the left side shows a current selected color on the front, and a prevous selected color on the sides. It may helps you to preview a harmonics of colors.
 You can manually copy/paste values of HSLA and ARGB
 
 ### Big Version

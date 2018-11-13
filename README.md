@@ -1,5 +1,5 @@
 # WPF ColorDialogEx
-## Incredible ColorDialog with Harmonic colors selection helpers and HSLA fautures
+## Incredible ColorDialog with Harmonic colors selection helpers and HSL feautures
 
 ### Small version
 This ColorDicalog have a simple "small" **dark theme** and **light theme** versions, which have a color chooser, **Alpha** component slider (upside) and **Saturation** slider (downside).

@@ -1,0 +1,69 @@
+﻿<Window x:Class="ColorDialogEx.ColorDialogExS"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:colorDialogEx="clr-namespace:ColorDialogEx"
+		mc:Ignorable="d" WindowStartupLocation="CenterOwner" Title="Color Dialog" Height="360" Width="390" MinHeight="320" MinWidth="346" Background="{DynamicResource LightWindowBackground}" TextOptions.TextFormattingMode="Display" Loaded="Window_Loaded">
+	<Window.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="..\Styles\DarkStyleDictionary.xaml"/>
+				<ResourceDictionary Source="..\Styles\LightStyleDictionary.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Window.Resources>
+	
+    <Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="260*"/>
+			<ColumnDefinition Width="72"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+
+		<colorDialogEx:ColorDialogExCtl x:Name="ColorDialog" Grid.Row="0" Grid.ColumnSpan="1"/>
+		
+		<Rectangle x:Name="BackColorRect1" Fill="#FFF4F4F5" Margin="0,172,12,0" RenderTransformOrigin="0.5,0.5" StrokeThickness="0.5" Height="8" VerticalAlignment="Top" HorizontalAlignment="Right" Width="49" Grid.Column="1">
+			<Rectangle.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform/>
+					<SkewTransform AngleX="40.693"/>
+					<RotateTransform/>
+					<TranslateTransform X="-0.125"/>
+				</TransformGroup>
+			</Rectangle.RenderTransform>
+		</Rectangle>
+		<Rectangle x:Name="BackColorRect2" Fill="#FFF4F4F5" HorizontalAlignment="Right" Height="49" Margin="0,187,58,0" VerticalAlignment="Top" Width="7" RenderTransformOrigin="0.5,0.5" StrokeThickness="0.5" Grid.Column="1">
+			<Rectangle.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform/>
+					<SkewTransform AngleY="49.447"/>
+					<RotateTransform/>
+					<TranslateTransform Y="-11.061"/>
+				</TransformGroup>
+			</Rectangle.RenderTransform>
+		</Rectangle>
+		
+		<Rectangle x:Name="FrontColorRect" Height="49" Margin="0,180,9,0" VerticalAlignment="Top" StrokeThickness="0.5" HorizontalAlignment="Right" Width="49" Grid.Column="1" Fill="#FFF3F3F3"/>
+		<TextBox x:Name="txtHTML" HorizontalAlignment="Right" TextWrapping="NoWrap" Width="70" FontSize="11" Height="18" VerticalAlignment="Top" Grid.Column="1" HorizontalContentAlignment="Right" Style="{DynamicResource LightTextBoxStyle}" Margin="0,2,2,0"/>
+		<TextBox x:Name="txtH" HorizontalAlignment="Right" TextWrapping="NoWrap" Width="46" FontSize="11" Height="18" VerticalAlignment="Top" Grid.Column="1" Margin="0,26,2,0" KeyDown="txt_KeyDown" PreviewMouseLeftButtonDown="txtPrevMouseDown" GotFocus="txtGotFocus" Style="{DynamicResource LightTextBoxStyle}"/>
+		<TextBox x:Name="txtS" HorizontalAlignment="Right" TextWrapping="NoWrap" Width="46" FontSize="11" Height="18" VerticalAlignment="Top" Grid.Column="1" Margin="0,46,2,0" KeyDown="txt_KeyDown" PreviewMouseLeftButtonDown="txtPrevMouseDown" GotFocus="txtGotFocus" Style="{DynamicResource LightTextBoxStyle}"/>
+		<TextBox x:Name="txtL" HorizontalAlignment="Right" TextWrapping="NoWrap" Width="46" FontSize="11" Height="18" VerticalAlignment="Top" Grid.Column="1" Margin="0,66,2,0" KeyDown="txt_KeyDown" PreviewMouseLeftButtonDown="txtPrevMouseDown" GotFocus="txtGotFocus" Style="{DynamicResource LightTextBoxStyle}"/>
+		<TextBox x:Name="txtA" HorizontalAlignment="Right" TextWrapping="NoWrap" Width="46" FontSize="11" Height="18" VerticalAlignment="Top" Grid.Column="1" Margin="0,86,2,0" KeyDown="txt_KeyDown" PreviewMouseLeftButtonDown="txtPrevMouseDown" GotFocus="txtGotFocus" Style="{DynamicResource LightTextBoxStyle}"/>
+		<TextBox x:Name="txtR" HorizontalAlignment="Right" TextWrapping="NoWrap" Width="46" FontSize="11" Height="18" VerticalAlignment="Top" Grid.Column="1" Margin="0,106,2,0" KeyDown="txt_KeyDown" PreviewMouseLeftButtonDown="txtPrevMouseDown" GotFocus="txtGotFocus" Style="{DynamicResource LightTextBoxStyle}"/>
+		<TextBox x:Name="txtG" HorizontalAlignment="Right" TextWrapping="NoWrap" Width="46" FontSize="11" Height="18" VerticalAlignment="Top" Grid.Column="1" Margin="0,126,2,0" KeyDown="txt_KeyDown" PreviewMouseLeftButtonDown="txtPrevMouseDown" GotFocus="txtGotFocus" Style="{DynamicResource LightTextBoxStyle}"/>
+		<TextBox x:Name="txtB" HorizontalAlignment="Right" TextWrapping="NoWrap" Width="46" FontSize="11" Height="18" VerticalAlignment="Top" Grid.Column="1" Margin="0,146,2,0" KeyDown="txt_KeyDown" PreviewMouseLeftButtonDown="txtPrevMouseDown" GotFocus="txtGotFocus" Style="{DynamicResource LightTextBoxStyle}"/>
+		
+		<Label Content="H:" HorizontalAlignment="Right" Margin="0,24,46,0" VerticalAlignment="Top" Height="22" Width="19" RenderTransformOrigin="0.475,1.02" FontSize="11" TextOptions.TextFormattingMode="Display" Grid.Column="1"/>
+		<Label Content="S:" HorizontalAlignment="Right" Margin="0,44,46,0" VerticalAlignment="Top" Height="22" Width="19" RenderTransformOrigin="0.475,1.02" FontSize="11" TextOptions.TextFormattingMode="Display" Grid.Column="1"/>
+		<Label Content="L:" HorizontalAlignment="Right" Margin="0,64,46,0" VerticalAlignment="Top" Height="22" Width="19" RenderTransformOrigin="0.475,1.02" FontSize="11" TextOptions.TextFormattingMode="Display" Grid.Column="1"/>
+		<Label Content="A:" HorizontalAlignment="Right" Margin="0,84,46,0" VerticalAlignment="Top" Height="22" Width="19" RenderTransformOrigin="0.475,1.02" FontSize="11" TextOptions.TextFormattingMode="Display" Grid.Column="1"/>
+		<Label Content="R:" HorizontalAlignment="Right" Margin="0,104,46,0" VerticalAlignment="Top" Height="22" Width="19" RenderTransformOrigin="0.475,1.02" FontSize="11" TextOptions.TextFormattingMode="Display" Grid.Column="1"/>
+		<Label Content="G:" HorizontalAlignment="Right" Margin="0,124,46,0" VerticalAlignment="Top" Height="22" Width="19" RenderTransformOrigin="0.475,1.02" FontSize="11" TextOptions.TextFormattingMode="Display" Grid.Column="1"/>
+		<Label Content="B:" HorizontalAlignment="Right" Margin="0,143,46,0" VerticalAlignment="Top" Height="22" Width="19" RenderTransformOrigin="0.475,1.02" FontSize="11" TextOptions.TextFormattingMode="Display" Grid.Column="1"/>
+		<Button x:Name="btnOK" Content="OK" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="67" Margin="0,0,3,32" Height="22" Grid.Column="1" Click="btnOK_Click" Style="{StaticResource LightButtonStyle}" TextOptions.TextFormattingMode="{StaticResource TxtFormatMode}" Foreground="{StaticResource LControlForeground}"></Button>
+		<Button x:Name="btnCancel" Content="Cancel" Margin="0,0,3,5" HorizontalAlignment="Right" Width="67" Height="22" VerticalAlignment="Bottom" Grid.Column="1" Click="btnCancel_Click" Style="{StaticResource LightButtonStyle}" TextOptions.TextFormattingMode="{StaticResource TxtFormatMode}" Foreground="{StaticResource LControlForeground}"></Button>
+	</Grid>
+</Window>

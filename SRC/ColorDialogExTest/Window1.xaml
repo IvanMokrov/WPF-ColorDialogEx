@@ -1,0 +1,25 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ColorDialogEx="clr-namespace:ColorDialogEx;assembly=ColorDialogEx"
+        x:Class="ColorDialogExTest.Window1"
+        Title="Color proof (ColorDialogEx testing)" Height="385" Width="497" Loaded="Window_Loaded_1">
+	<Grid>
+		<ToolBarTray Background="#FFE4E3E3">
+			<ToolBar HorizontalAlignment="Left" VerticalAlignment="Top">
+				<Button x:Name="btn1" Content=" Small Light " Background="#FFC3C2C2" VerticalAlignment="Top" Click="btn1_Click"></Button>
+				<Button x:Name="btn2" Content=" Small Dark " Background="#FFC3C2C2" VerticalAlignment="Top" Click="btn2_Click"></Button>
+				<Button x:Name="btn3" Content=" Big Light " Background="#FFC3C2C2" VerticalAlignment="Top" Click="btn3_Click"></Button>
+				<Button x:Name="btn4" Content=" Big Dark " Background="#FFC3C2C2" VerticalAlignment="Top" Click="btn4_Click"></Button>
+				<Separator/>
+				<Slider x:Name="slider1" LargeChange="5" Maximum="20" SmallChange="1" Value="10" Width="100" Minimum="1"/>
+				<Separator/>
+				<Button x:Name="btnUndo" Content="Undo" Background="#FFC3C2C2" VerticalAlignment="Top" Click="btnUndo_Click"></Button>
+				<Button x:Name="btnLoad" Content=" ▲ " Background="#FFC3C2C2" VerticalAlignment="Top" Click="btnLoad_Click"></Button>
+				<Button x:Name="btnSave" Content=" ▼ " Background="#FFC3C2C2" VerticalAlignment="Top" Click="btnSave_Click"></Button>
+			</ToolBar>
+		</ToolBarTray>
+		<Image x:Name="img" Margin="10,41,0,0" HorizontalAlignment="Left" Width="444" Height="295" VerticalAlignment="Top" Cursor="Pen"/>
+		<Image x:Name="imgf" Margin="10,41,0,0" HorizontalAlignment="Left" Width="450" Height="300" VerticalAlignment="Top" Cursor="Pen" Stretch="None"/>
+	</Grid>
+</Window>

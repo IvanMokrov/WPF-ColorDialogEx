@@ -1409,7 +1409,7 @@ namespace ColorDialogEx
         /// <summary>
         /// Lightness (triangle) mouse move
         /// </summary>
-        /// <param name="mousePoint">Target point</param>
+        /// <param name="mousePoint">Point of interest</param>
         private void Move_TriColorMark(Point mousePoint)
         {
             if (PointInTriangle(mousePoint, TriPnt1, TriPnt2, TriPnt3)) // mouse inside
@@ -1476,7 +1476,7 @@ namespace ColorDialogEx
         /// <summary>
         /// Satiration editor mouse move
         /// </summary>
-        /// <param name="mousePoint">Target point</param>
+        /// <param name="mousePoint">Point of interest</param>
         private void Move_SatDirector(Point mousePoint)
         {
             // do -1 pixel to avoid WPF antialiasing mistakes
@@ -1494,7 +1494,7 @@ namespace ColorDialogEx
         /// <summary>
         /// Satiration editor set by value
         /// </summary>
-        /// <param name="value">value of saturation [0..1]</param>
+        /// <param name="value">Value of saturation [0..1]</param>
         private void Move_SatDirector(double value)
         {
             double targetX = SaturatorPnt1.X + ((SaturatorPnt2.X - SaturatorPnt1.X) * value);
@@ -1532,7 +1532,7 @@ namespace ColorDialogEx
         /// <summary>
         /// Alpha editor set by value
         /// </summary>
-        /// <param name="value">alpha value [0..255]</param>
+        /// <param name="value">Alpha value [0..255]</param>
         private void Move_AlphDirector(byte value)
         {
             double targetX = AlphaPnt1.X + ((AlphaPnt2.X - AlphaPnt1.X) * (value / 255d));

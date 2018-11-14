@@ -1574,8 +1574,8 @@ namespace ColorDialogEx
         /// </summary>
         /// <param name="sourcePoint">Point of interest</param>
         /// <param name="p1">Triangle point 1</param>
-        /// <param name="p2">Triangle point 1</param>
-        /// <param name="p3">Triangle point 1</param>
+        /// <param name="p2">Triangle point 2</param>
+        /// <param name="p3">Triangle point 3</param>
         /// <returns></returns>
         private static bool PointInTriangle(Point sourcePoint, Point p1, Point p2, Point p3)
         {

@@ -1284,120 +1284,120 @@ namespace ColorDialogEx
         /// <summary>
         /// Set angle on hexagon for hexagon director line
         /// </summary>
-        /// <param name="graduceHue">Angle in grad</param>
+        /// <param name="degreeHue">Angle in grad</param>
         /// <param name="origin">Custom origin point</param>
         /// <returns>Target triangle point to set hex director line</returns>
-        private void Move_HexDirector(double graduceHue, Point origin)
+        private void Move_HexDirector(double degreeHue, Point origin)
         {
-            if (graduceHue < 0)
-                graduceHue = -graduceHue;
+            if (degreeHue < 0)
+                degreeHue = -degreeHue;
 
-            if (graduceHue > 360)
-                graduceHue = graduceHue % 360;
+            if (degreeHue > 360)
+                degreeHue = degreeHue % 360;
 
-            if (Math.Abs(graduceHue) < 0.00001 || Math.Abs(graduceHue - 360) < 0.00001) // (graduceHue == 0 || graduceHue == 360)
+            if (Math.Abs(degreeHue) < 0.00001 || Math.Abs(degreeHue - 360) < 0.00001) // (degreeHue == 0 || degreeHue == 360)
             {
                 Move_HexDirector(new Point(origin.X + origin.X, origin.Y), HexagonInnerRadius);
                 return;
             }
-            if (Math.Abs(graduceHue - 90) < 0.00001) // (graduceHue == 90)
+            if (Math.Abs(degreeHue - 90) < 0.00001) // (degreeHue == 90)
             {
                 Move_HexDirector(new Point(origin.X, origin.Y - origin.Y), HexagonInnerRadius);
                 return;
             }
-            if (Math.Abs(graduceHue - 180) < 0.00001) // (graduceHue == 180)
+            if (Math.Abs(degreeHue - 180) < 0.00001) // (degreeHue == 180)
             {
                 Move_HexDirector(new Point(origin.X - origin.X, origin.Y), HexagonInnerRadius);
                 return;
             }
-            if (Math.Abs(graduceHue - 270) < 0.00001) // (graduceHue == 270)
+            if (Math.Abs(degreeHue - 270) < 0.00001) // (degreeHue == 270)
             {
                 Move_HexDirector(new Point(origin.X, origin.Y + origin.Y), HexagonInnerRadius);
                 return;
             }
 
-            if (Math.Abs(graduceHue - 45) < 0.00001) // (graduceHue == 45)
+            if (Math.Abs(degreeHue - 45) < 0.00001) // (degreeHue == 45)
             {
                 Move_HexDirector(new Point(origin.X + origin.X, origin.Y - origin.Y), HexagonInnerRadius);
                 return;
             }
-            if (Math.Abs(graduceHue - 135) < 0.00001) // (graduceHue == 135)
+            if (Math.Abs(degreeHue - 135) < 0.00001) // (degreeHue == 135)
             {
                 Move_HexDirector(new Point(origin.X - origin.X, origin.Y - origin.Y), HexagonInnerRadius);
                 return;
             }
-            if (Math.Abs(graduceHue - 225) < 0.00001) // (graduceHue == 225)
+            if (Math.Abs(degreeHue - 225) < 0.00001) // (degreeHue == 225)
             {
                 Move_HexDirector(new Point(origin.X - origin.X, origin.Y + origin.Y), HexagonInnerRadius);
                 return;
             }
-            if (Math.Abs(graduceHue - 315) < 0.00001) // (graduceHue == 315)
+            if (Math.Abs(degreeHue - 315) < 0.00001) // (degreeHue == 315)
             {
                 Move_HexDirector(new Point(origin.X + origin.X, origin.Y + origin.Y), HexagonInnerRadius);
                 return;
             }
 
             double sideB = origin.X;
-            double radiance = graduceHue * (Math.PI / 180d);
+            double radiance = degreeHue * (Math.PI / 180d);
             double sideA = sideB * Math.Tan(radiance);
 
-            if (graduceHue > 0 && graduceHue < 45)
+            if (degreeHue > 0 && degreeHue < 45)
             {
                 Move_HexDirector(new Point(origin.X + sideB, origin.Y - sideA), HexagonInnerRadius);
                 return;
             }
-            if (graduceHue > 45 && graduceHue < 90)
+            if (degreeHue > 45 && degreeHue < 90)
             {
-                graduceHue = 90 - graduceHue;
-                radiance = graduceHue * (Math.PI / 180d);
+                degreeHue = 90 - degreeHue;
+                radiance = degreeHue * (Math.PI / 180d);
                 sideA = sideB * Math.Tan(radiance);
                 Move_HexDirector(new Point(origin.X + sideA, origin.Y - sideB), HexagonInnerRadius);
                 return;
             }
-            if (graduceHue > 90 && graduceHue < 135)
+            if (degreeHue > 90 && degreeHue < 135)
             {
-                graduceHue = graduceHue - 90;
-                radiance = graduceHue * (Math.PI / 180d);
+                degreeHue = degreeHue - 90;
+                radiance = degreeHue * (Math.PI / 180d);
                 sideA = sideB * Math.Tan(radiance);
                 Move_HexDirector(new Point(origin.X - sideA, origin.Y - sideB), HexagonInnerRadius);
                 return;
             }
-            if (graduceHue > 135 && graduceHue < 180)
+            if (degreeHue > 135 && degreeHue < 180)
             {
-                graduceHue = 180 - graduceHue;
-                radiance = graduceHue * (Math.PI / 180d);
+                degreeHue = 180 - degreeHue;
+                radiance = degreeHue * (Math.PI / 180d);
                 sideA = sideB * Math.Tan(radiance);
                 Move_HexDirector(new Point(origin.X - sideB, origin.Y - sideA), HexagonInnerRadius);
                 return;
             }
-            if (graduceHue > 180 && graduceHue < 225)
+            if (degreeHue > 180 && degreeHue < 225)
             {
-                graduceHue = graduceHue - 180;
-                radiance = graduceHue * (Math.PI / 180d);
+                degreeHue = degreeHue - 180;
+                radiance = degreeHue * (Math.PI / 180d);
                 sideA = sideB * Math.Tan(radiance);
                 Move_HexDirector(new Point(origin.X - sideB, origin.Y + sideA), HexagonInnerRadius);
                 return;
             }
-            if (graduceHue > 225 && graduceHue < 270)
+            if (degreeHue > 225 && degreeHue < 270)
             {
-                graduceHue = 270 - graduceHue;
-                radiance = graduceHue * (Math.PI / 180d);
+                degreeHue = 270 - degreeHue;
+                radiance = degreeHue * (Math.PI / 180d);
                 sideA = sideB * Math.Tan(radiance);
                 Move_HexDirector(new Point(origin.X - sideA, origin.Y + sideB), HexagonInnerRadius);
                 return;
             }
-            if (graduceHue > 270 && graduceHue < 315)
+            if (degreeHue > 270 && degreeHue < 315)
             {
-                graduceHue = graduceHue - 270;
-                radiance = graduceHue * (Math.PI / 180d);
+                degreeHue = degreeHue - 270;
+                radiance = degreeHue * (Math.PI / 180d);
                 sideA = sideB * Math.Tan(radiance);
                 Move_HexDirector(new Point(origin.X + sideA, origin.Y + sideB), HexagonInnerRadius);
                 return;
             }
-            if (graduceHue > 315 && graduceHue < 360)
+            if (degreeHue > 315 && degreeHue < 360)
             {
-                graduceHue = 360 - graduceHue;
-                radiance = graduceHue * (Math.PI / 180d);
+                degreeHue = 360 - degreeHue;
+                radiance = degreeHue * (Math.PI / 180d);
                 sideA = sideB * Math.Tan(radiance);
                 Move_HexDirector(new Point(origin.X + sideB, origin.Y + sideA), HexagonInnerRadius);
                 return;
@@ -1409,7 +1409,7 @@ namespace ColorDialogEx
         /// <summary>
         /// Lightness (triangle) mouse move
         /// </summary>
-        /// <param name="mousePoint">target point</param>
+        /// <param name="mousePoint">Target point</param>
         private void Move_TriColorMark(Point mousePoint)
         {
             if (PointInTriangle(mousePoint, TriPnt1, TriPnt2, TriPnt3)) // mouse inside
@@ -1464,7 +1464,7 @@ namespace ColorDialogEx
         /// <summary>
         /// Lightness (triangle) editor set by value
         /// </summary>
-        /// <param name="value">value of lightness [0..1]</param>
+        /// <param name="value">Value of lightness [0..1]</param>
         private void Move_TriColorMark(double value)
         {
             double point = (TriSide * value) - TriSide / 2d;
@@ -1476,7 +1476,7 @@ namespace ColorDialogEx
         /// <summary>
         /// Satiration editor mouse move
         /// </summary>
-        /// <param name="mousePoint">target point</param>
+        /// <param name="mousePoint">Target point</param>
         private void Move_SatDirector(Point mousePoint)
         {
             // do -1 pixel to avoid WPF antialiasing mistakes
@@ -1512,7 +1512,7 @@ namespace ColorDialogEx
         /// <summary>
         /// Alpha editor mouse move
         /// </summary>
-        /// <param name="mousePoint">target point</param>
+        /// <param name="mousePoint">Point of interest</param>
         private void Move_AlphDirector(Point mousePoint)
         {
             // do -1 pixel to avoid WPF antialiasing mistakes
@@ -1550,8 +1550,8 @@ namespace ColorDialogEx
         /// <summary>
         /// Get an angle of the point for hexagon color wheel in range 0-1
         /// </summary>
-        /// <param name="sourcePoint">Target point</param>
-        /// <param name="origin">Custom origin point</param>
+        /// <param name="sourcePoint">Point of interest</param>
+        /// <param name="origin">Origin point</param>
         /// <returns></returns>
         private static double GetAngle(Point sourcePoint, Point origin)
         {
@@ -1572,7 +1572,7 @@ namespace ColorDialogEx
         /// <summary>
         /// Target point is inside a triangle?
         /// </summary>
-        /// <param name="sourcePoint">Target point</param>
+        /// <param name="sourcePoint">Point of interest</param>
         /// <param name="p1">Triangle point 1</param>
         /// <param name="p2">Triangle point 1</param>
         /// <param name="p3">Triangle point 1</param>
@@ -1588,7 +1588,7 @@ namespace ColorDialogEx
         /// <summary>
         /// Target point is inside a circle?
         /// </summary>
-        /// <param name="srcP">Target point</param>
+        /// <param name="srcP">Point of interest</param>
         /// <param name="radius">Radius of circle</param>
         /// <returns></returns>
         private bool PointInCircle(Point srcP, double radius)
@@ -1599,7 +1599,7 @@ namespace ColorDialogEx
         /// <summary>
         /// Target point is inside a hexagon?
         /// </summary>
-        /// <param name="sourcePoint">Target point</param>
+        /// <param name="sourcePoint">Point of interest</param>
         /// <returns></returns>
         private bool PointInHexagon(Point sourcePoint)
         {
